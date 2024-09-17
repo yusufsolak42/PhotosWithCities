@@ -1,0 +1,57 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container for the photo grid */
+.photo-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow photos to wrap onto new rows */
+  gap: 10px; /* Space between photos */
+  justify-content: center; /* Center the photo grid */
+}
+
+/* Photo styling */
+.photo {
+  flex: 0 1 calc(25% - 20px); /* Adjust photo size to fit 4 photos per row */
+  margin: 10px;
+  text-align: center; /* Center the text below each photo */
+}
+
+.photo img {
+  width: 150px; /* Set a smaller width for the photos */
+  height: 150px; /* Set a fixed height for uniformity */
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the dropdowns and button */
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+select, button {
+  padding: 12px 20px; /* Larger padding for better balance */
+  font-size: 18px; /* Increase the font size */
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px; /* Increase the width of the dropdowns */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
