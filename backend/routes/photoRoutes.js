@@ -27,6 +27,8 @@ router.get("/photos", async (req, res) => {
   if (filterConditions.length > 0) {
     query.$and = filterConditions;
   }
+  console.log(query);
+  
 
   try {
     // Find photos that match the query
@@ -34,6 +36,8 @@ router.get("/photos", async (req, res) => {
     res.json(photos); // Send the filtered photos as JSON response
   } catch (err) {
     res.status(500).json({ error: err.message }); // Send error response if something goes wrong
+    console.log(err);
+    
   }
 });
 

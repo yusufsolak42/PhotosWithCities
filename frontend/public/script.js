@@ -35,7 +35,7 @@ async function applyFilters() {
   // Build query parameters based on selected filters
   const queryParams = new URLSearchParams();
   if (country) queryParams.append("country", country);
-  if (state) queryParams.append("state", state);
+  if (state) queryParams.append("state", state);  
   if (city) queryParams.append("city", city);
   if (style) queryParams.append("style", style);
 
@@ -45,7 +45,8 @@ async function applyFilters() {
 
   // Get the photo gallery container
   const gallery = document.getElementById("photoGallery");
-  gallery.innerHTML = ""; // Clear any existing photos
+  gallery.innerHTML = ""; // Clear any existing photos 
+  
 
   // Display each photo in the gallery
   photos.forEach((photo) => {
@@ -55,7 +56,6 @@ async function applyFilters() {
       <img src="${photo.filePath}" alt="${
       photo.fileName
     }"> <!-- Display photo image -->
-      <p>${photo.fileName}</p> <!-- Display photo file name -->
       <p>Tags: ${photo.tags.join(", ")}</p> <!-- Display photo tags -->
     `;
     gallery.appendChild(photoDiv); // Add the photo container to the gallery
