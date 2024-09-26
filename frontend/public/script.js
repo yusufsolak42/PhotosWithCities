@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
       populateDropdown("state", data.states);
       populateDropdown("city", data.cities);
       populateDropdown("style", data.styles);
+      populateDropdown("genre", data.genres);
+      populateDropdown("content", data.contents);
     })
     .catch((error) => console.error("Error loading JSON data:", error));
 });
@@ -31,13 +33,17 @@ async function applyFilters() {
   const state = document.getElementById("state").value;
   const city = document.getElementById("city").value;
   const style = document.getElementById("style").value;
+  const genre = document.getElementById("genre").value;
+  const content = document.getElementById("content").value;
 
   // Build query parameters based on selected filters
   const queryParams = new URLSearchParams();
   if (country) queryParams.append("country", country);
-  if (state) queryParams.append("state", state);  
+  if (state) queryParams.append("state", state);
   if (city) queryParams.append("city", city);
   if (style) queryParams.append("style", style);
+  if (genre) queryParams.append("genre", genre);
+  if (content) queryParams.append("content", content);
 
   // Fetch photos from the backend with applied filters
   const response = await fetch(`/api/photos?${queryParams.toString()}`);
@@ -45,8 +51,7 @@ async function applyFilters() {
 
   // Get the photo gallery container
   const gallery = document.getElementById("photoGallery");
-  gallery.innerHTML = ""; // Clear any existing photos 
-  
+  gallery.innerHTML = ""; // Clear any existing photos
 
   // Display each photo in the gallery
   photos.forEach((photo) => {
@@ -60,4 +65,18 @@ async function applyFilters() {
     `;
     gallery.appendChild(photoDiv); // Add the photo container to the gallery
   });
+
+}
+
+function toggleGenreDropDown() {
+  const contentDropdown = document.getElementById("content");
+  const genreDropdown = document.getElementById("genre");
+
+  // Check if the selected value is 'movie'
+  if (contentDropdown.value === "movie") {
+    genreDropdown.disabled = false; // Enable genre dropdown
+  } else {
+    genreDropdown.disabled = true; // Disable genre dropdown
+    genreDropdown.value = ""; // Reset genre selection
+  }
 }

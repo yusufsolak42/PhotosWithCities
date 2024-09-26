@@ -5,7 +5,7 @@ const router = express.Router();
 // Route to get photos with various filters
 router.get("/photos", async (req, res) => {
   // Extract filter parameters from the query string
-  const { city, state, style, country } = req.query; 
+  const { city, state, style, country, genre, content } = req.query; 
   
   //same as =>
   // const city = req.query.city;
@@ -21,6 +21,8 @@ router.get("/photos", async (req, res) => {
   if (state) filterConditions.push({ tags: state });
   if (style) filterConditions.push({ tags: style });
   if (country) filterConditions.push({ tags: country });
+  if (country) filterConditions.push({ tags: genre });
+  if (country) filterConditions.push({ tags: content });
 
   // If there are conditions, use $and to combine them
   let query = {};
