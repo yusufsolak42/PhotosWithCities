@@ -16,52 +16,63 @@
       <h1 class="mb-4">Photo Gallery</h1>
 
       <div class="row mb-4">
-        <!-- Filters Column -->
-        <div class="col-md-3">
-          <div class="form-group">
-            <label for="content">Content</label>
-            <select id="content" class="form-control" onchange="toggleGenreDropDown()">
-              <option value="">Select Content</option>
-            </select>
+        <!-- Filters Row -->
+        <div class="col-md-12 mb-3">
+          <div
+            class="d-flex justify-content-between align-items-center flex-wrap"
+          >
+            <div class="d-flex flex-wrap">
+              <div class="form-group mr-2">
+                <label for="content">Content</label>
+                <select
+                  id="content"
+                  class="form-control"
+                  onchange="toggleGenreDropDown()"
+                >
+                  <option value="">Select Content</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="genre">Genre</label>
+                <select id="genre" class="form-control">
+                  <option value="">Select Genre</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="style">Style</label>
+                <select id="style" class="form-control">
+                  <option value="">Select Style</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="country">Country</label>
+                <select id="country" class="form-control">
+                  <option value="">Select Country</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="state">State</label>
+                <select id="state" class="form-control">
+                  <option value="">Select State</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="city">City</label>
+                <select id="city" class="form-control">
+                  <option value="">Select City</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn btn-primary mb-2" onclick="applyFilters()">
+              Apply Filters
+            </button>
           </div>
-          <div class="form-group">
-            <label for="genre">Genre</label>
-            <select id="genre" class="form-control">
-              <option value="">Select Genre</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="style">Style</label>
-            <select id="style" class="form-control">
-              <option value="">Select Style</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="country">Country</label>
-            <select id="country" class="form-control">
-              <option value="">Select Country</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <select id="state" class="form-control">
-              <option value="">Select State</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="city">City</label>
-            <select id="city" class="form-control">
-              <option value="">Select City</option>
-            </select>
-          </div>
-          <button class="btn btn-primary mb-4" onclick="applyFilters()">
-            Apply Filters
-          </button>
         </div>
 
         <!-- Photo Gallery Column -->
-        <div class="col-md-9">
+        <div class="col-md-12">
           <div id="photoGallery" class="row"></div>
+          <div id="pagination" class="d-flex justify-content-center mt-4"></div>
         </div>
       </div>
     </div>

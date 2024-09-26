@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       populateDropdown("content", data.contents);
     })
     .catch((error) => console.error("Error loading JSON data:", error));
+  loadPhotos(1); //first page when the dom is loaded
 });
 
 // Function to populate dropdowns with options
@@ -27,7 +28,7 @@ function populateDropdown(id, options) {
 }
 
 // Function to apply selected filters and load photos
-async function applyFilters() {
+async function loadPhotos(page = 1) {
   // Get selected values from dropdowns
   const country = document.getElementById("country").value;
   const state = document.getElementById("state").value;
@@ -44,17 +45,18 @@ async function applyFilters() {
   if (style) queryParams.append("style", style);
   if (genre) queryParams.append("genre", genre);
   if (content) queryParams.append("content", content);
+  queryParams.append("page", page); // Add the page parameter
 
   // Fetch photos from the backend with applied filters
   const response = await fetch(`/api/photos?${queryParams.toString()}`);
-  const photos = await response.json(); // Parse JSON response
+  const data = await response.json(); // Parse JSON response
 
   // Get the photo gallery container
   const gallery = document.getElementById("photoGallery");
   gallery.innerHTML = ""; // Clear any existing photos
 
   // Display each photo in the gallery
-  photos.forEach((photo) => {
+  data.photos.forEach((photo) => {
     const photoDiv = document.createElement("div"); // Create a container for the photo
     photoDiv.classList.add("photo"); // Add a CSS class for styling
     photoDiv.innerHTML = `
@@ -66,6 +68,38 @@ async function applyFilters() {
     gallery.appendChild(photoDiv); // Add the photo container to the gallery
   });
 
+  // Render pagination controls
+  renderPaginationControls(data.totalPages, data.currentPage); //we render the buttons to click
+}
+
+// Function to render pagination controls
+function renderPaginationControls(totalPages, currentPage) {
+  const paginationDiv = document.getElementById("pagination");
+  paginationDiv.innerHTML = ""; // Clear existing pagination controls
+  // Previous button
+  const prevButton = document.createElement("button");
+  prevButton.textContent = "Previous";
+  prevButton.disabled = currentPage === 1; // Disable if on the first page
+  prevButton.addEventListener("click", () => loadPhotos(currentPage - 1));
+  paginationDiv.appendChild(prevButton);
+
+  // Current page display
+  const pageInfo = document.createElement("span");
+  pageInfo.textContent = ` Page ${currentPage} of ${totalPages} `;
+  pageInfo.style.margin = "0 10px"; // Add some margin for spacing
+  paginationDiv.appendChild(pageInfo); // Add page info between the buttons
+
+  // Next button
+  const nextButton = document.createElement("button");
+  nextButton.textContent = "Next";
+  nextButton.disabled = currentPage === totalPages; // Disable if on the last page if total page number is equal to current page
+  nextButton.addEventListener("click", () => loadPhotos(currentPage + 1)); //when clicked, increase the currentpage number and load the photos again
+  paginationDiv.appendChild(nextButton);
+}
+
+// Event listener for the "Apply Filters" button
+async function applyFilters() {
+  loadPhotos(1); // Reload the first page of photos with the applied filters
 }
 
 function toggleGenreDropDown() {
