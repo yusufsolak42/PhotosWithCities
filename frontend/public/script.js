@@ -39,7 +39,7 @@ async function loadPhotos(page = 1) {
 
   // Build query parameters based on selected filters
   const queryParams = new URLSearchParams();
-  if (country) queryParams.append("country", country);
+  if (country) queryParams.append("country", country); //key-value pairs
   if (state) queryParams.append("state", state);
   if (city) queryParams.append("city", city);
   if (style) queryParams.append("style", style);
@@ -86,7 +86,7 @@ function renderPaginationControls(totalPages, currentPage) {
   // Current page display
   const pageInfo = document.createElement("span");
   pageInfo.textContent = ` Page ${currentPage} of ${totalPages} `;
-  pageInfo.style.margin = "0 10px"; // Add some margin for spacing
+  pageInfo.style.margin = "0 70px"; // Add some margin for spacing
   paginationDiv.appendChild(pageInfo); // Add page info between the buttons
 
   // Next button
@@ -112,5 +112,17 @@ function toggleGenreDropDown() {
   } else {
     genreDropdown.disabled = true; // Disable genre dropdown
     genreDropdown.value = ""; // Reset genre selection
+  }
+}
+function toggleCountryDropDown() {
+  const countryDropdown = document.getElementById("country");
+  const stateDropdown = document.getElementById("state");
+
+  // Check if the selected value is 'movie'
+  if (countryDropdown.value === "United States") {
+    stateDropdown.disabled = false; // Enable state dropdown
+  } else {
+    stateDropdown.disabled = true; // Disable state dropdown
+    stateDropdown.value = ""; // Reset genre selection
   }
 }

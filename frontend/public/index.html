@@ -12,7 +12,7 @@
     <!-- Link to your custom CSS -->
   </head>
   <body>
-    <div class="container mt-4">
+    <div class="container-fluid mt-4">
       <h1 class="mb-4">Photo Gallery</h1>
 
       <div class="row mb-4">
@@ -46,7 +46,7 @@
               </div>
               <div class="form-group mr-2">
                 <label for="country">Country</label>
-                <select id="country" class="form-control">
+                <select id="country" class="form-control" onchange="toggleCountryDropDown()">
                   <option value="">Select Country</option>
                 </select>
               </div>

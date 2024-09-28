@@ -23,36 +23,42 @@ body {
 }
 
 .photo img {
-  width: 200px; /* Set a smaller width for the photos */
-  height: 400px; /* Set a fixed height for uniformity */
+  width: 300px; /* Set a smaller width for the photos */
+  height: 600px; /* Set a fixed height for uniformity */
   object-fit: cover;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the dropdowns and button */
+/* Styling for the labels and dropdowns */
 label {
-  font-size: 18px;
-  margin-right: 10px;
+  font-size: 20px; /* Increased font size for better visibility */
+  margin-right: 15px; /* Added margin for spacing */
 }
 
 select, button {
-  padding: 12px 20px; /* Larger padding for better balance */
-  font-size: 18px; /* Increase the font size */
+  padding: 15px 25px; /* Larger padding for better balance */
+  font-size: 20px; /* Increased font size for readability */
   margin-bottom: 20px;
-  margin-left: -20px; /* Move dropdowns more to the left */
+  margin-left: -10px; /* Adjusted for better alignment */
   border-radius: 4px;
   border: 1px solid #ccc;
-  width: 200px; /* Increase the width of the dropdowns */
+  width: 250px; /* Increased width for dropdowns */
 }
 
 button {
   background-color: #4CAF50;
   color: white;
   cursor: pointer;
+  font-size: 22px; /* Enlarged the button text */
+  padding: 12px 30px; /* Increased button size */
 }
 
 button:hover {
   background-color: #45a049;
+}
+
+#style, #content {
+  width: 250px; /* Increase width for Style and Content */
 }
