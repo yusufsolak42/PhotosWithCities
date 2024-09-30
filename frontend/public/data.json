@@ -68,8 +68,17 @@
     "istanbul",
     "new-york",
     "el-paso",
-    "huntsville" 
-    
+    "huntsville",
+    "central-valley",
+    "pacific-coast",
+    "caribbean",
+    "bali",
+    "carolina",
+    "bahamas",
+    "hawaii",
+    "jamaica",
+    "malta",
+    "tahiti"
   ],
   "states": [
     "arizona",
@@ -100,16 +109,12 @@
     "alabama"
   ],
   "regions": [
-    "central-valley",
-    "pacific-coast",
-    "caribbean",
-    "bali",
-    "carolina",
-    "bahamas",
-    "hawaii",
-    "jamaica",
-    "malta",
-    "tahiti"
+    "Asia",
+    "North America",
+    "South America",
+    "middle East",
+    "africa",
+    "Antarctica"
   ],
   "countries": [
     "United States",

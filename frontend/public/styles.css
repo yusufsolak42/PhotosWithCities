@@ -63,21 +63,26 @@ button:hover {
 
 #content {
   width: 180px; /* Increase width for Style and Content */
-  margin-right: 5px;
+  margin-right: 10px;
 }
 #genre {
   width: 150px;
-  margin-right: 5px;
+  margin-right: 70px;
 }
 #style {
   width: 150px;
+  margin-right: 10px;
+}
+#type {
+  width: 150px;
   margin-right: 70px;
+}
+#region {
+  width: 150px;
+  margin-right: 10px;
 }
 #city {
   width: 150px;
   margin-right: 100px;
 }
-#type {
-  width: 150px;
-  margin-right: 5px;
-}
+

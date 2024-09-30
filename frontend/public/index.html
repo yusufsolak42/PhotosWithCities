@@ -33,12 +33,6 @@
                 </select>
               </div>
               <div class="form-group mr-2">
-                <label for="type">Type</label>
-                <select id="type" class="form-control">
-                  <option value="">Select Type</option>
-                </select>
-              </div>
-              <div class="form-group mr-2">
                 <label for="genre">Genre</label>
                 <select id="genre" class="form-control">
                   <option value="">Select Genre</option>
@@ -51,8 +45,24 @@
                 </select>
               </div>
               <div class="form-group mr-2">
+                <label for="type">Type</label>
+                <select id="type" class="form-control">
+                  <option value="">Select Type</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
+                <label for="region">Region</label>
+                <select id="region" class="form-control">
+                  <option value="">Select Region</option>
+                </select>
+              </div>
+              <div class="form-group mr-2">
                 <label for="country">Country</label>
-                <select id="country" class="form-control" onchange="toggleCountryDropDown()">
+                <select
+                  id="country"
+                  class="form-control"
+                  onchange="toggleCountryDropDown()"
+                >
                   <option value="">Select Country</option>
                 </select>
               </div>
@@ -68,7 +78,10 @@
                   <option value="">Select City</option>
                 </select>
               </div>
-              <button class="btn btn-primary mb-2 align-self-end " onclick="applyFilters()">
+              <button
+                class="btn btn-primary mb-2 align-self-end"
+                onclick="applyFilters()"
+              >
                 Apply Filters
               </button>
             </div>
