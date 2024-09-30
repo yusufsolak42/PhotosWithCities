@@ -37,7 +37,8 @@ label {
   margin-right: 15px; /* Added margin for spacing */
 }
 
-select, button {
+select,
+button {
   padding: 15px 25px; /* Larger padding for better balance */
   font-size: 20px; /* Increased font size for readability */
   margin-bottom: 20px;
@@ -48,17 +49,35 @@ select, button {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   cursor: pointer;
   font-size: 22px; /* Enlarged the button text */
-  padding: 12px 30px; /* Increased button size */
+  width: 160px;
+  height: 60px;
 }
 
 button:hover {
   background-color: #45a049;
 }
 
-#style, #content {
-  width: 250px; /* Increase width for Style and Content */
+#content {
+  width: 180px; /* Increase width for Style and Content */
+  margin-right: 5px;
+}
+#genre {
+  width: 150px;
+  margin-right: 5px;
+}
+#style {
+  width: 150px;
+  margin-right: 70px;
+}
+#city {
+  width: 150px;
+  margin-right: 100px;
+}
+#type {
+  width: 150px;
+  margin-right: 5px;
 }

@@ -157,5 +157,9 @@
     "movie",
     "travel",
     "propaganda"
+  ],
+  "types": [
+    "portrait",
+    "landscape"
   ]
 }

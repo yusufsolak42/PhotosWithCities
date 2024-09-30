@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       populateDropdown("style", data.styles);
       populateDropdown("genre", data.genres);
       populateDropdown("content", data.contents);
+      populateDropdown("type", data.types);
     })
     .catch((error) => console.error("Error loading JSON data:", error));
   loadPhotos(1); //first page when the dom is loaded
