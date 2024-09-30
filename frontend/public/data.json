@@ -67,7 +67,9 @@
     "corinth",
     "istanbul",
     "new-york",
-    "el-paso"
+    "el-paso",
+    "huntsville" 
+    
   ],
   "states": [
     "arizona",
@@ -94,7 +96,8 @@
     "south-dakota",
     "texas",
     "washington",
-    "wyoming"
+    "wyoming",
+    "alabama"
   ],
   "regions": [
     "central-valley",
